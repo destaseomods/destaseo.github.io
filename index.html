@@ -1,51 +1,29 @@
+---
+title: Home
+---
 
----
-layout: default
-title: Premium Apps MOD Terbaru
----
-<div class="hero">
-  <div class="hero-content">
-    <h1>📱 Premium Apps MOD</h1>
-    <p>Unlock <strong>Spotify Premium</strong>, <strong>WhatsApp Plus</strong>, <strong>PicsArt Pro</strong> & 200+ Apps Lainnya</p>
-    <div class="hero-stats">
-      <span>📊 250+ Apps</span>
-      <span>⚡ Daily Update</span>
-      <span>💯 Premium Unlocked</span>
+<div class="max-w-6xl mx-auto px-6 py-10">
+  <h1 class="text-4xl font-bold text-center mb-10 neon-text">🔥 Mod Terbaru</h1>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for post in site.posts %}
+    <div class="bg-zinc-900 border border-zinc-700 rounded-2xl overflow-hidden hover:border-cyan-500 transition-all card-hover">
+      <div class="h-52 bg-gradient-to-br from-purple-600 via-cyan-600 to-blue-600 flex items-center justify-center">
+        <i class="fas fa-gamepad text-7xl text-white/70"></i>
+      </div>
+      <div class="p-6">
+        <span class="text-xs uppercase tracking-widest text-red-400">{{ post.category | default: 'Mod' }}</span>
+        <h2 class="text-xl font-semibold mt-2 line-clamp-2">{{ post.title }}</h2>
+        <p class="text-zinc-400 text-sm mt-3 line-clamp-3">{{ post.excerpt }}</p>
+        
+        <div class="mt-5 flex justify-between items-center">
+          <a href="{{ post.url }}" class="text-cyan-400 font-medium hover:underline">
+            Detail & Download →
+          </a>
+          <span class="text-xs text-zinc-500">{{ post.date | date: "%d %b %Y" }}</span>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-<section class="featured">
-  <h2>🔥 Trending Apps MOD</h2>
-  <div class="apps-grid">
-    {% for app in site.apps limit: 8 %}
-      {% include app-card.html app=app %}
     {% endfor %}
   </div>
-</section>
-
-<section class="categories">
-  <h2>📂 Kategori Apps</h2>
-  <div class="category-grid">
-    <a href="#music" class="category-card music">
-      <h3>🎵 Music</h3>
-      <p>Spotify, YouTube Music</p>
-    </a>
-    <a href="#social" class="category-card social">
-      <h3>💬 Social</h3>
-      <p>WhatsApp+, Telegram X</p>
-    </a>
-    <a href="#photo" class="category-card photo">
-      <h3>🖼️ Photo Editor</h3>
-      <p>PicsArt, Lightroom</p>
-    </a>
-    <a href="#video" class="category-card video">
-      <h3>🎬 Video Editor</h3>
-      <p>CapCut, VN Pro</p>
-    </a>
-    <a href="#tools" class="category-card tools">
-      <h3>🔧 Tools</h3>
-      <p>VLC, MX Player Pro</p>
-    </a>
-  </div>
-</section>
+</div>
